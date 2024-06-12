@@ -1,0 +1,96 @@
+{% extends '../base.html' %}
+{% block content %}
+
+
+<div class="container mt-5">
+  <h3 class="text-center">Income Statement</h3>
+  
+  <div class="table-responsive mt-5 ">
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr class="text-nowrap">
+          <th>Company ID</th>
+          <th>Total Current Assets</th>
+          <th>Cash</th>
+          <th>Accounts Receivables</th>
+          <th>Prepaid Expenses</th>
+          <th>Inventory</th>
+          <th>Other Current Assets</th>
+          <th>COGS Direct Labour</th>
+          <th>COGS Material</th>
+          <th>COGS Parts</th>
+          <th>COGS Distribution</th>
+          <th>COGS Other</th>
+          <th>Total Non-Current Assets</th>
+          <th>Property</th>
+          <th>Charity</th>
+          <th>Equipment</th>
+          <th>Leases</th>
+          <th>Other Non-Current Assets</th>
+          <th>Total Current Liabilities</th>
+          <th>Accounts Payable</th>
+          <th>Accrued Expenses</th>
+          <th>Unearned Revenue</th>
+          <th>Other Current Liabilities</th>
+          <th>Total Non-Current Liabilities</th>
+          <th>Long-Term Debt</th>
+          <th>Other Non-Current Liabilities</th>
+          <th>Shareholder Equity</th>
+          <th>Equity Investment Capital</th>
+          <th>Equity Retained Earnings</th>
+          <th>Creator ID</th>
+          <th>Modifier ID</th>
+          <th>User ID</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        {% for statement in balance_sheet %}
+        <tr>
+          <td>{{ statement.company_id }}</td>
+          <td>{{ statement.total_current_assets }}</td>
+          <td>{{ statement.cash }}</td>
+          <td>{{ statement.accounts_receivables }}</td>
+          <td>{{ statement.prepaid_expenses }}</td>
+          <td>{{ statement.inventory }}</td>
+          <td>{{ statement.other_current_assets }}</td>
+          <td>{{ statement.cogs_direct_labour }}</td>
+          <td>{{ statement.cogs_material }}</td>
+          <td>{{ statement.cogs_parts }}</td>
+          <td>{{ statement.cogs_distribution }}</td>
+          <td>{{ statement.cogs_other }}</td>
+          <td>{{ statement.total_non_current_assets }}</td>
+          <td>{{ statement.property }}</td>
+          <td>{{ statement.charity }}</td>
+          <td>{{ statement.equipment }}</td>
+          <td>{{ statement.leases }}</td>
+          <td>{{ statement.other_non_current_assets }}</td>
+          <td>{{ statement.total_current_liabilities }}</td>
+          <td>{{ statement.accounts_payable }}</td>
+          <td>{{ statement.accrued_expenses }}</td>
+          <td>{{ statement.unearned_revenue }}</td>
+          <td>{{ statement.other_current_liabilities }}</td>
+          <td>{{ statement.total_non_current_liabilities }}</td>
+          <td>{{ statement.long_term_debt }}</td>
+          <td>{{ statement.other_non_current_liabilities }}</td>
+          <td>{{ statement.shareholder_equity }}</td>
+          <td>{{ statement.equity_investment_capital }}</td>
+          <td>{{ statement.equity_retained_earnings }}</td>
+          <td>{{ statement.creator_id }}</td>
+          <td>{{ statement.modifier_id }}</td>
+          <td>{{ statement.user_id }}</td>
+          <td><a href="#"><i class="fa fa-pen"></i></a></td>
+          <td><a href="{% url  'delete_balance_sheet' statement.id%}"><i class="fa fa-trash-alt"></i></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+  
+  
+    </table>
+  </div>
+</div>
+
+
+{% endblock content %}

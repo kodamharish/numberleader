@@ -1,0 +1,71 @@
+{% extends './base.html' %} {% block content %}
+<div class="container">
+    
+        <form method="post">
+            {% csrf_token %}
+    
+
+            
+    
+            <div class="row mt-5">
+                <h3 class="mb-4 text-center">Update Sub User</h3>
+                {% for msg in messages %}
+                    <p class="text-danger mt-2 fw-bold text-center ">{{msg}}</p>
+                    {% endfor %}
+    
+                <div class="col-md-6">
+
+                    <div class="mb-3 mt-3 inline">
+                        <label for="sub_user_fullname">Name</label>
+                        <input type="text" class="form-control w-50" name="sub_user_fullname" value="{{data.sub_user_fullname}}" required>
+                    </div>
+    
+                    <div class="mb-3 mt-3 inline">
+                        <label for="sub_user_name">Username</label>
+                        <input type="text" class="form-control w-50" name="sub_user_name" value="{{data.sub_user_name}}" required readonly>
+                    </div>
+    
+                    <div class="mb-3 mt-3 inline">
+                        <label for="sub_user_email">Email</label>
+                        <input type="email" class="form-control w-50" name="sub_user_email" value="{{data.sub_user_email}}" required>
+                    </div>
+
+                    
+    
+    
+                </div>
+    
+                <div class="col-md-6">
+                    <div class="mb-3 mt-3 inline">
+                        <label for="sub_user_company_id">Company ID</label>
+                        <input type="text" class="form-control w-50" name="sub_user_company_id" value="{{data.sub_user_company_id}}" required>
+                    </div>
+    
+                    <div class="mb-3 mt-3 inline">
+                        <label for="sub_user_designation">Designation</label>
+                        <input type="text" class="form-control w-50" name="sub_user_designation" value="{{data.sub_user_designation}}" required>
+                    </div> 
+
+                    <div class="mb-3 mt-3 inline">
+                        <label for="sub_user_phone_number">Phone Number</label>
+                        <input type="number" class="form-control w-50" name="sub_user_phone_number" value="{{data.sub_user_phone_number}}"required>
+                    </div>
+    
+                </div>
+            </div>    
+            
+    
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary mb-3 mt-4">Submit</button>
+            </div>
+
+            
+    
+    
+        </form>
+    
+
+</div>
+
+
+{% endblock content %}

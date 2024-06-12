@@ -1,0 +1,47 @@
+{% extends '../base.html' %}
+{% block content %}
+
+
+<div class="container mt-5">
+    <h3 class="mb-4 text-center">Sub User Details</h3>
+
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Username</th>
+                    <th>Company ID</th>
+                    <th>Designation</th>
+                    <th>Phone Number</th>
+                    <th></th>
+                    <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for data in data %}
+                <tr>
+                    <td>{{data.sub_user_fullname}}</td>
+                    <td>{{data.sub_user_email}}</td>
+                    <td>{{data.sub_user_name}}</td>
+                    <td>{{data.sub_user_company_id}}</td>
+                    <td>{{data.sub_user_designation}}</td>
+                    <td>{{data.sub_user_phone_number}}</td>
+
+                    <td><a href="{% url 'update_sub_user' data.sub_user_name %}"><i  class="fa fa-pen"></i></a></td>
+                    <td><a href="{% url 'delete_sub_user' data.sub_user_name %}"><i  class="fa fa-trash-alt" ></i></a></td>
+
+
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock content %}

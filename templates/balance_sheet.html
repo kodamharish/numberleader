@@ -1,0 +1,149 @@
+{% extends './base.html' %}
+{% block content %}
+<div class="container">
+  <form method="post">
+    {% csrf_token %}
+    <div class="row mt-5">
+      <h3 class="text-center">BALANCE SHEET DETAILS</h3>
+      <div class="col-md-6">
+        <div class="mb-3 mt-3 inline">
+          <label for="company_id">Company ID</label>
+          <input type="text" class="form-control w-50" name="company_id" value="{{ current_user.company_id }}" required readonly>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="total_current_assets">Total Current Assets</label>
+          <input type="number" step="any" class="form-control w-50" name="total_current_assets" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="cash">Cash</label>
+          <input type="number" step="any" class="form-control w-50" name="cash" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="accounts_receivables">Accounts Receivables</label>
+          <input type="number" step="any" class="form-control w-50" name="accounts_receivables" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="prepaid_expenses">Prepaid Expenses</label>
+          <input type="number" step="any" class="form-control w-50" name="prepaid_expenses" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="inventory">Inventory</label>
+          <input type="number" step="any" class="form-control w-50" name="inventory" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="other_current_assets">Other Current Assets</label>
+          <input type="number" step="any" class="form-control w-50" name="other_current_assets" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="cost_of_goods_sold_direct_labour">Cost of Goods Sold Direct Labour</label>
+          <input type="number" step="any" class="form-control w-50" name="cost_of_goods_sold_direct_labour" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="cost_of_goods_sold_material">Cost of Goods Sold Material</label>
+          <input type="number" step="any" class="form-control w-50" name="cost_of_goods_sold_material" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="cost_of_goods_sold_parts">Cost of Goods Sold Parts</label>
+          <input type="number" step="any" class="form-control w-50" name="cost_of_goods_sold_parts" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="cost_of_goods_sold_distribution">Cost of Goods Sold Distribution</label>
+          <input type="number" step="any" class="form-control w-50" name="cost_of_goods_sold_distribution" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="cost_of_goods_sold_other">Cost of Goods Sold Other</label>
+          <input type="number" step="any" class="form-control w-50" name="cost_of_goods_sold_other" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="creator_id">Creator ID</label>
+          <input type="text" class="form-control w-50" name="creator_id" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="modifier_id">Modifier ID</label>
+          <input type="number" class="form-control w-50" name="modifier_id" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="user_id">User ID</label>
+          <input type="text" class="form-control w-50" name="user_id" value="{{ current_user.user_id }}" required readonly>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3 mt-3 inline">
+          <label for="total_non_current_assets">Total Non-Current Assets</label>
+          <input type="number" step="any" class="form-control w-50" name="total_non_current_assets" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="property">Property</label>
+          <input type="number" step="any" class="form-control w-50" name="property" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="charity">Charity</label>
+          <input type="number" step="any" class="form-control w-50" name="charity" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="equipment">Equipment</label>
+          <input type="number" step="any" class="form-control w-50" name="equipment" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="leases">Leases</label>
+          <input type="number" step="any" class="form-control w-50" name="leases" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="other_non_current_assets">Other Non-Current Assets</label>
+          <input type="number" step="any" class="form-control w-50" name="other_non_current_assets" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="total_current_liabilities">Total Current Liabilities</label>
+          <input type="number" step="any" class="form-control w-50" name="total_current_liabilities" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="accounts_payable">Accounts Payable</label>
+          <input type="number" step="any" class="form-control w-50" name="accounts_payable" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="accrued_expenses">Accrued Expenses</label>
+          <input type="number" step="any" class="form-control w-50" name="accrued_expenses" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="unearned_revenue">Unearned Revenue</label>
+          <input type="number" step="any" class="form-control w-50" name="unearned_revenue" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="other_current_liabilities">Other Current Liabilities</label>
+          <input type="number" step="any" class="form-control w-50" name="other_current_liabilities" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="total_non_current_liabilities">Total Non-Current Liabilities</label>
+          <input type="number" step="any" class="form-control w-50" name="total_non_current_liabilities" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="long_term_debt">Long-term Debt</label>
+          <input type="number" step="any" class="form-control w-50" name="long_term_debt" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="other_non_current_liabilities">Other Non-Current Liabilities</label>
+          <input type="number" step="any" class="form-control w-50" name="other_non_current_liabilities" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="shareholder_equity">Shareholder Equity</label>
+          <input type="number" step="any" class="form-control w-50" name="shareholder_equity" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="equity_investment_capital">Equity Investment Capital</label>
+          <input type="number" step="any" class="form-control w-50" name="equity_investment_capital" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="equity_retained_earnings">Equity Retained Earnings</label>
+          <input type="number" step="any" class="form-control w-50" name="equity_retained_earnings" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary mb-3 mt-4">Submit</button>
+    </div>
+
+  </form>
+
+</div>
+{% endblock content %}

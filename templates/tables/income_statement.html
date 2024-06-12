@@ -1,0 +1,79 @@
+{% extends '../base.html' %}
+{% block content %}
+
+
+<div class="container mt-5">
+  <h3 class="text-center">Income Statement</h3>
+
+  <div class="table-responsive mt-5 ">
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr class="text-nowrap">
+          <th>Company ID</th>
+          <th>Product Name</th>
+          <th>Total Revenue</th>
+          <th>Total Taxes</th>
+          <th>Total COGS</th>
+          <th>COGS Direct Labour</th>
+          <th>COGS Material</th>
+          <th>COGS Parts</th>
+          <th>COGS Distribution</th>
+          <th>COGS Other</th>
+          <th>Total Operating Expenses</th>
+          <th>Operating Expense Rent</th>
+          <th>Operating Expense Utilities</th>
+          <th>Operating Expense Overhead</th>
+          <th>Operating Expense Legal</th>
+          <th>Operating Expense Depreciation</th>
+          <th>Operating Expense Marketing Ads</th>
+          <th>Operating Expense Interest</th>
+          <th>Operating Expense Travel</th>
+          <th>Operating Expense Wages</th>
+          <th>Operating Expense Other</th>
+          <th>Operating Expense Insurance</th>
+          <th>Modifiers ID</th>
+          <th>User ID</th>
+          <th></th>
+          <th></th>
+        </tr>
+
+      </thead>
+      <tbody>
+        {% for statement in income_statement %}
+        <tr>
+          <td>{{ statement.company_id }}</td>
+          <td>{{ statement.product_name }}</td>
+          <td>{{ statement.total_revenue }}</td>
+          <td>{{ statement.total_taxes }}</td>
+          <td>{{ statement.total_cogs }}</td>
+          <td>{{ statement.cogs_direct_labour }}</td>
+          <td>{{ statement.cogs_material }}</td>
+          <td>{{ statement.cogs_parts }}</td>
+          <td>{{ statement.cogs_distribution }}</td>
+          <td>{{ statement.cogs_other }}</td>
+          <td>{{ statement.total_operating_expenses }}</td>
+          <td>{{ statement.opexpense_rent }}</td>
+          <td>{{ statement.opexpense_utilities }}</td>
+          <td>{{ statement.opexpense_overhead }}</td>
+          <td>{{ statement.opexpense_legal }}</td>
+          <td>{{ statement.opexpense_depreciation }}</td>
+          <td>{{ statement.opexpense_marketing_ads }}</td>
+          <td>{{ statement.opexpense_interest }}</td>
+          <td>{{ statement.opexpense_travel }}</td>
+          <td>{{ statement.opexpense_wages }}</td>
+          <td>{{ statement.opexpense_other }}</td>
+          <td>{{ statement.opexpense_insurance }}</td>
+          <td>{{ statement.modifiers_id }}</td>
+          <td>{{ statement.user_id }}</td>
+          <td><a href="#"><i class="fa fa-pen"></i></a></td>
+          <td><a href="{% url 'delete_income_statement' statement.id %}"><i class="fa fa-trash-alt"></i></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+
+    </table>
+  </div>
+</div>
+
+
+{% endblock content %}

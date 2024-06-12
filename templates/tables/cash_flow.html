@@ -1,0 +1,92 @@
+{% extends '../base.html' %}
+{% block content %}
+
+
+<div class="container mt-5">
+  <h3 class="text-center">Income Statement</h3>
+  
+  <div class="table-responsive mt-5 ">
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr class="text-nowrap">
+          <th>Company ID</th>
+          <th>Net Financing</th>
+          <th>CF Financing Inflow Drawing</th>
+          <th>CF Financing Inflow Distribution</th>
+          <th>CF Financing Inflow Other</th>
+          <th>CF Financing Outflow Loan Payments</th>
+          <th>CF Financing Outflow Other</th>
+          <th>Net Investments</th>
+          <th>CF Investments Inflow Loans</th>
+          <th>CF Investments Inflow Sell Property</th>
+          <th>CF Investments Inflow Sell Equip</th>
+          <th>CF Investments Inflow Other</th>
+          <th>CF Investments Outflow Buy Property</th>
+          <th>CF Investments Outflow Buy Equip</th>
+          <th>CF Investments Outflow Other</th>
+          <th>Net Operations</th>
+          <th>CF Operations Inflow Customers</th>
+          <th>CF Operations Inflow Depreciation</th>
+          <th>CF Operations Inflow Amortization</th>
+          <th>CF Operations Inflow Other</th>
+          <th>CF Operations Outflow Wages</th>
+          <th>CF Operations Outflow Overhead</th>
+          <th>CF Operations Outflow Interest</th>
+          <th>CF Operations Outflow Taxes</th>
+          <th>CF Operations Outflow Accounts Receivable</th>
+          <th>CF Operations Outflow Inventory Increase</th>
+          <th>CF Operations Outflow Other</th>
+          <th>Creator ID</th>
+          <th>Modifier ID</th>
+          <th>User ID</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+  
+      <tbody>
+        {% for statement in cash_flow %}
+        <tr>
+          <td>{{ statement.company_id }}</td>
+          <td>{{ statement.net_financing }}</td>
+          <td>{{ statement.cf_financing_inflow_drawing }}</td>
+          <td>{{ statement.cf_financing_inflow_distribution }}</td>
+          <td>{{ statement.cf_financing_inflow_other }}</td>
+          <td>{{ statement.cf_financing_outflow_loan_payments }}</td>
+          <td>{{ statement.cf_financing_outflow_other }}</td>
+          <td>{{ statement.net_investments }}</td>
+          <td>{{ statement.cf_investments_inflow_loans }}</td>
+          <td>{{ statement.cf_investments_inflow_sell_property }}</td>
+          <td>{{ statement.cf_investments_inflow_sell_equip }}</td>
+          <td>{{ statement.cf_investments_inflow_other }}</td>
+          <td>{{ statement.cf_investments_outflow_buy_property }}</td>
+          <td>{{ statement.cf_investments_outflow_buy_equip }}</td>
+          <td>{{ statement.cf_investments_outflow_other }}</td>
+          <td>{{ statement.net_operations }}</td>
+          <td>{{ statement.cf_operations_inflow_customers }}</td>
+          <td>{{ statement.cf_operations_inflow_depreciation }}</td>
+          <td>{{ statement.cf_operations_inflow_amortization }}</td>
+          <td>{{ statement.cf_operations_inflow_other }}</td>
+          <td>{{ statement.cf_operations_outflow_wages }}</td>
+          <td>{{ statement.cf_operations_outflow_overhead }}</td>
+          <td>{{ statement.cf_operations_outflow_interest }}</td>
+          <td>{{ statement.cf_operations_outflow_taxes }}</td>
+          <td>{{ statement.cf_operations_outflow_accounts_receivable }}</td>
+          <td>{{ statement.cf_operations_outflow_inventory_increase }}</td>
+          <td>{{ statement.cf_operations_outflow_other }}</td>
+          <td>{{ statement.creator_id }}</td>
+          <td>{{ statement.modifier_id }}</td>
+          <td>{{ statement.user_id }}</td>
+          <td><a href="#"><i class="fa fa-pen"></i></a></td>
+          <td><a href="{% url 'delete_cash_flow'  statement.id %}"><i class="fa fa-trash-alt"></i></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+  
+  
+    </table>
+  </div>
+</div>
+
+
+{% endblock content %}

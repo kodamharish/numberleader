@@ -1,0 +1,197 @@
+{% extends './base.html' %} {% block content %}
+<div class="container">
+  <form method="post">
+    {% csrf_token %}
+    <div class="row mt-5">
+      <h3 class="text-center">Income Statements</h3>
+
+      <h4 class="text-center">COMPANY DETAILS</h4>
+
+      <div class="col-md-6">
+
+        <div class="mb-3 mt-3 inline">
+          <label for="company_id">Company Id</label>
+          <input type="text" class="form-control w-50" name="company_id" value="{{ current_user.company_id }}" required readonly>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="product_name">Product Name</label>
+          <input type="text" class="form-control w-50" name="product_name" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="total_dividends">Total Dividends</label>
+          <input type="text" class="form-control w-50" name="total_dividends" required>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3 mt-3 inline">
+          <label for="total_revenue">Total Revenue</label>
+          <input type="text" class="form-control w-50" name="total_revenue" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="total_taxes">Total Taxes</label>
+          <input type="text" class="form-control w-50" name="total_taxes" required>
+        </div>
+
+        <div class="mb-3 mt-3 inline">
+          <label for="total_cogs">Total Cost of Goods Sold</label>
+          <input type="text" class="form-control w-50" name="total_cogs" required>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="row mt-5">
+      <h4 class="text-center">COST PER UNIT DETAILS</h4>
+      <div class="col-md-6">
+        <div class="mb-3 mt-3 inline">
+          <label for="cogs_direct_labour">Cost of Goods Sold direct labour</label>
+          <input type="text" class="form-control w-50" name="cogs_direct_labour" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="cogs_material">Cost of Goods Sold Material</label>
+          <input type="text" class="form-control w-50" name="cogs_material" required>
+        </div>
+        <div class="mb-3 mt-3 inline">
+          <label for="cogs_parts">Cost of Goods Sold Parts</label>
+          <input type="text" class="form-control w-50" name="cogs_parts" required>
+        </div>
+      </div>
+      <div class="col-md-6">
+
+        <div class="mb-3 mt-3 inline">
+          <label for="cogs_distribution">Cost of Goods Sold Distribution</label>
+          <input type="text" class="form-control w-50" name="cogs_distribution" required>
+        </div>
+
+        <div class="mb-3 mt-3 inline">
+          <label for="cogs_other">Cost of Goods Sold Other</label>
+          <input type="text" class="form-control w-50" name="cogs_other" required>
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+    <div class="row mt-5">
+      <h4 class="text-center">OPERATING EXPENSE DETAILS</h4>
+      <div class="col-md-6">
+        <div class="mb-3 mt-3 inline">
+          <label for="total_op_expense">Total Operating Expense</label>
+          <input type="text" class="form-control w-50" name="total_op_expense" required>
+        </div>
+
+        <div class="mb-3 mt-3 inline">
+          <label for="op_exp_rent">Operating Expense Rent</label>
+          <input type="text" class="form-control w-50" name="op_exp_rent" required>
+        </div>
+
+        <div class="mb-3 mt-3 inline">
+          <label for="op_rent_expense">Operating Rent Expense</label>
+          <input type="text" class="form-control w-50" name="op_rent_expense" required>
+        </div>
+
+        <div class="mb-3 mt-3 inline">
+          <label for="op_exp_utilities">Operating Expense Utilities</label>
+          <input type="text" class="form-control w-50" name="op_exp_utilities" required>
+        </div>
+
+        <div class="mb-3 mt-3 inline">
+          <label for="op_exp_overhead">Operating Overhead Expense</label>
+          <input type="text" class="form-control w-50" name="op_exp_overhead" required>
+        </div>
+
+
+
+        <div class="mb-3 mt-3 inline">
+          <label for="op_exp_legal">Operating Legal Expense</label>
+          <input type="text" class="form-control w-50" name="op_exp_legal" required>
+        </div>
+
+
+        <div class="mb-3 mt-3 inline">
+          <label for="op_exp_depreciation">Operating Deprication Expense</label>
+          <input type="text" class="form-control w-50" name="op_exp_depreciation" required>
+        </div>
+
+
+
+
+      </div>
+
+
+
+
+
+      <div class="col-md-6">
+
+
+        <div class="mb-3 mt-3 inline">
+          <label for="op_exp_marketing_ads">Operating Marketing ads Expense</label>
+          <input type="text" class="form-control w-50" name="op_exp_marketing_ads" required>
+        </div>
+
+        <div class="mb-3 mt-3 inline">
+          <label for="op_exp_insurance">Operating Insurance Expense</label>
+          <input type="text" class="form-control w-50" name="op_exp_insurance" required>
+        </div>
+
+
+        <div class="mb-3 mt-3 inline">
+          <label for="op_exp_interest">Operating interest Expense</label>
+          <input type="text" class="form-control w-50" name="op_exp_interest" required>
+        </div>
+
+
+
+        <div class="mb-3 mt-3 inline">
+          <label for="op_exp_travel">Operating travels Expense</label>
+          <input type="text" class="form-control w-50" name="op_exp_travel" required>
+        </div>
+
+
+        <div class="mb-3 mt-3 inline">
+          <label for="op_exp_wages">Operating wages Expense</label>
+          <input type="text" class="form-control w-50" name="op_exp_wages" required>
+        </div>
+
+
+        <div class="mb-3 mt-3 inline">
+          <label for="op_exp_other">Operating other Expense</label>
+          <input type="text" class="form-control w-50" name="op_exp_other" required>
+        </div>
+
+
+
+        <div class="mb-3 mt-3 inline">
+          <label for="creator_id">Creator ID</label>
+          <input type="text" class="form-control w-50" name="creator_id" required>
+        </div>
+
+
+        <div class="mb-3 mt-3 inline">
+          <label for="modifier_id">Modifier Id</label>
+          <input type="text" class="form-control w-50" name="modifier_id" required>
+        </div>
+
+        <div class="mb-3 mt-3 inline">
+          <label for="user_id">User id</label>
+          <input type="text" class="form-control w-50" name="user_id" value="{{ current_user.user_id }}" required readonly>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary mb-3 mt-4">Submit</button>
+    </div>
+
+  </form>
+
+
+</div>
+
+{% endblock content %}
